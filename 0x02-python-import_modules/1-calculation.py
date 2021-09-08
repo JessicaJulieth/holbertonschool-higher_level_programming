@@ -13,8 +13,8 @@ if __name__ == "__main__":
 
     from calculator_1 import mul
 
-    print("{} / {} = {}".format(a, b, mul(a, b)))
+    print("{} * {} = {}".format(a, b, mul(a, b)))
 
     from calculator_1 import div
 
-    print("{} + {} = {}".format(a, b, div(a, b)))
+    print("{} / {} = {}".format(a, b, div(a, b)))
