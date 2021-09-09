@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import ALPHABETH
-print(X)
+import string
+print(string.ascii_uppercase)
