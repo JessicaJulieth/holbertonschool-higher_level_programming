@@ -4,14 +4,10 @@
 
 class Square:
     """Empty Square class"""
-    def __init__(self, size=0):
-        if isinstance(size, int):
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            else:
-                self.__size = size
-        else:
-            raise TypeError("size must be an integer")
+    def __init__(self, size=0, position=(0, 0)):
+        """Initialize Square attribute"""
+        self.size = size
+        self.__position = position
 
     def area(self):
         """Define Square area"""
@@ -37,8 +33,11 @@ class Square:
         """Print the Square with #"""
         if self.__size == 0:
             print("")
+        if self.__position[1] > 0:
+            print('\n'*self.__position[1], end='')
         else:
             for i in range(self.__size):
+                print(' '*self.__position[0], end='')
                 print("#" * self.__size)
 
     @property
@@ -48,15 +47,14 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if is not isinstance(value, tuple) or len(value) != 2:
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError(
                 "position must be a tuple of 2 positive integers")
-        elif is not isinstance(value[0], int)
-        or is not isinstance(value[1], int):
+        elif not isinstance(value[0], int) or not isinstance(value[1], int):
             raise TypeError(
                 "position must be a tuple of 2 positive integers")
         elif value[0] < 0 or value[1] < 0:
             raise TypeError(
                 "position must be a tuple of 2 positive integers")
         else:
-            self.position = value
+            self.__position = value
