@@ -15,8 +15,8 @@ Two: Add positive and negative integers
     >>> add_integer(10,-6)
     4
 
-Three: Add two positive floats
-    >>> add_integer(2.4,3.1)
+Three: Add positive float and int
+    >>> add_integer(2.4,3)
     5
 
 Four: Add int and string
@@ -28,3 +28,23 @@ Four: Add int and string
 Five: Add two negative floats
     >>> add_integer(-3.1,-8.2)
     -11
+
+Six: Missing one argument a= int, b = 98
+    >>> add_integer(2)
+    100
+
+Seven: Missing two arguments
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Eigth: Cannot convert float NaN to integer
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Ten: Type
+    >>> type(add_integer(3.1, 2)) == int
+    True
