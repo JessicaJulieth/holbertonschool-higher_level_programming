@@ -7,21 +7,13 @@ Using ``text_indentation``
 Import
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-One:
-    >>> text_indentation(“Jessica Julieth”)
-        Traceback (most recent call last):
-        SyntaxError: invalid character in identifier
+
 
 Two:
     >>> text_indentation(“Jessica.Julieth”)
     Traceback (most recent call last):
     SyntaxError: invalid character in identifier
 
-Three:
-    >>> text_indentation(“Jessica:Julieth?Sanabria”)
-    Jessica: 
-    Julieth?
-    Sanabria
 
 Four:
     >>> text_indentation(8)
