@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+""" Add numbers and return result """
+
 
 def add_integer(a, b=98):
-    """ Add numbers and return result """
+    """ Add numbers and return sum of two integers """
 
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
