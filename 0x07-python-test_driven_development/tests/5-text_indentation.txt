@@ -1,0 +1,36 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``text_indentation``
+-------------------
+
+Import
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+One:
+    >>> text_indentation(“Jessica Julieth”)
+        Traceback (most recent call last):
+        SyntaxError: invalid character in identifier
+
+Two:
+    >>> text_indentation(“Jessica.Julieth”)
+    Traceback (most recent call last):
+    SyntaxError: invalid character in identifier
+
+Three:
+    >>> text_indentation(“Jessica:Julieth?Sanabria”)
+    Jessica: 
+    Julieth?
+    Sanabria
+
+Four:
+    >>> text_indentation(8)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Five:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
