@@ -1,0 +1,30 @@
+The ``0_add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is a first test
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+One: Add two positive integers
+    >>> add_integer(2, 4)
+    6
+
+Two: Add positive and negative integers
+    >>> add_integer(10,-6)
+    4
+
+Three: Add two positive floats
+    >>> add_integer(2.4,3.1)
+    5
+
+Four: Add int and string
+    >>> add_integer(8, "today")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Five: Add two negative floats
+    >>> add_integer(-3.1,-8.2)
+    -11
