@@ -17,15 +17,18 @@ Two:
     Traceback (most recent call last):
     SyntaxError: invalid character in identifier
 
-
-Four:
+Tree:
     >>> text_indentation(8)
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
 
-Five:
+Four:
     >>> text_indentation()
     Traceback (most recent call last):
     ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Five:   
+    >>> text_indentation("Everyone need someone to love")
+    Everyone need someone to love
