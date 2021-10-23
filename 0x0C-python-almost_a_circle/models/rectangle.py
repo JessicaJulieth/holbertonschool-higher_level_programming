@@ -7,63 +7,71 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Define a Rectangle class
+    """
+    Define a Rectangle class which inherits from the Base class
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialisation of Rectangle
+        """
+        Initialisation of Rectangle
 
         Args:
             width (int): width of the rectangle
             height (int): height of the rectangle
-            x (int, optional): [description]. Defaults to 0.
-            y (int, optional): [description]. Defaults to 0.
-            id (int, optional): Rectangle identification. Defaults to None.
+            x (int/optional): Defaults to 0.
+            y (int): Defaults to 0.
+            id (int/optional): Rectangle identification. Defaults to None.
         """
-        self.width = width
-        self.height = height
+        super().__init__(id)
+
         self.x = x
         self.y = y
-        super().__init__(id)
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
-        """Width Getter
+        """
+        Width Getter Decorator
 
         Returns:
-            int: private instance attribute width of rectangle
+            int: private instance attribute width of the rectangle class
         """
         return self.__width
 
     @property
     def height(self):
-        """Height Getter
+        """
+        Height Getter Decorator
 
         Returns:
-            int: private instance attribute height of rectangle
+            int: Private instance attribute height of the rectangle class
         """
         return self.__height
 
     @property
     def x(self):
-        """x Getter
+        """
+        x Getter Decorator
 
         Returns:
-            int: private instance attribute x of rectangle
+            int: Private instance attribute x of the rectangle class
         """
         return self.__x
 
     @property
     def y(self):
-        """y Getter
+        """
+        y Getter Decorator
 
         Returns:
-            int: private instance attribute y of rectangle
+            int: private instance attribute y of rectangle class
         """
         return self.__y
 
     @width.setter
     def width(self, value):
-        """Set the value in private instance attribute
+        """
+        Set the value in private instance attribute (variable width)
 
         Args:
             value (int): width value
@@ -76,7 +84,8 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """Set the value in private instance attribute
+        """
+        Set the value in private instance attribute (variable height)
 
         Args:
             value (int): height value
@@ -89,7 +98,8 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """Set the value in private instance attribute
+        """
+        Set the value in private instance attribute (variable x)
 
         Args:
             value (int): x value
@@ -102,7 +112,8 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        """Set the value in private instance attribute
+        """
+        Set the value in private instance attribute (variable y)
 
         Args:
             value (int): y value
@@ -114,7 +125,8 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Define Rectangle area
+        """
+        Define Rectangle area: Calculate the area of a rectangle
 
         Returns:
             int : Rectangle area value
@@ -138,9 +150,9 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """
             Update the value of the Rectangle with arbitrary
-            arguments or keyword arguments
+            (keyword/positional) arguments
         """
-        attr = ['width', 'height', 'id', 'x', 'y']
+        attr = ('width', 'height', 'id', 'x', 'y')
         if args and args[0] is not None:
             for idx in range(len(args)):
                 setattr(self, attr[idx], args[idx])
