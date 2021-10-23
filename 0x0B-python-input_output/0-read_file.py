@@ -13,4 +13,5 @@ def read_file(filename=""):
 
     with open(file=filename, mode="r", encoding="utf-8") as df:
         txt = df.read()
-        print(txt)
+        if len(txt):
+            print(txt)
