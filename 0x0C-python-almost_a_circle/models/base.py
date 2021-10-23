@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """module that creates a class called Base"""
 
-import json
+from json import dumps
 
 
 class Base():
@@ -33,17 +33,4 @@ class Base():
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        return json.dumps(list_dictionaries)
-
-    def to_json_string(list_dictionaries):
-        """
-        Function to returns the JSON string
-        representation of list_dictionaries
-        Args:
-            list_dictionaries dict: instance dictionary
-        Returns:
-            str: JSON object as a string
-        """
-        if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
-        return json.dumps(list_dictionaries)
+        return dumps(list_dictionaries)
