@@ -62,17 +62,17 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        """ setter method for x
-        Attribute:
-            x value: must be an integer >= 0
+        """ method for x value
+        Return:
+            x value: integer >= 0
         """
         self.__x = value
 
     @property
     def y(self):
-        """ method for y value
-        Return:
-            y value: integer >= 0
+        """ setter method for y
+        Attribute:
+            y value: must be an integer >= 0
         """
         return self.__y
 
