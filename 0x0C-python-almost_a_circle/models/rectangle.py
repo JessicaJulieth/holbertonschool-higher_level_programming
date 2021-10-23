@@ -83,10 +83,3 @@ class Rectangle(Base):
             y value: must be an integer >= 0
         """
         self.__y = value
-
-    def area(self):
-        """ public method that calculates area
-        Returns:
-            area: integer
-        """
-        return self.width * self.height
