@@ -134,3 +134,16 @@ class Rectangle(Base):
         """
         return ("[Rectangle] ({0}) {1}/{2} - {3}/{4}".format(self.id,
                 self.x, self.y, self.width, self.height))
+
+    def update(self, *args, **kwargs):
+        """
+            Update the value of the Rectangle with arbitrary
+            arguments or keyword arguments
+        """
+        attr = ['width', 'height', 'id', 'x', 'y']
+        if args and args[0] is not None:
+            for idx in range(len(args)):
+                setattr(self, attr[idx], args[idx])
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
