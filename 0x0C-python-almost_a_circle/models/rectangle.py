@@ -1,18 +1,23 @@
 #!/usr/bin/python3
+"""Rectangle class
+"""
+
+
 from models.base import Base
-"""module that creates a class called Rectangle that inherits from Base"""
 
 
 class Rectangle(Base):
-    """class Rectangle that inherits from Base class"""
+    """Define a Rectangle class
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """class Constructor
-        Attributes:
-            width: Private instance attribute (integer)
-            height: Private instance attribute (integer)
-            x: Private instance attribute (integer), 0 by default
-            y: Private instance attribute (integer, 0 by default
-            id: Private instance attribute (integer) inherited from Base
+        """Initialisation of Rectangle
+
+        Args:
+            width (int): width of the rectangle
+            height (int): height of the rectangle
+            x (int, optional): [description]. Defaults to 0.
+            y (int, optional): [description]. Defaults to 0.
+            id (int, optional): Rectangle identification. Defaults to None.
         """
         self.width = width
         self.height = height
@@ -22,64 +27,72 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ method for width value
-        Return:
-            width value: integer greater than 0
+        """Width Getter
+
+        Returns:
+            int: private instance attribute width of rectangle
         """
         return self.__width
 
-    @width.setter
-    def width(self, value):
-        """ setter method for width
-        Attribute:
-            width value: must be an integer greater than zero
-        """
-        self.__width = value
-
     @property
     def height(self):
-        """ method for height value
-        Return:
-            height value: integer greater than 0
+        """Height Getter
+
+        Returns:
+            int: private instance attribute height of rectangle
         """
         return self.__height
 
-    @height.setter
-    def height(self, value):
-        """ setter method for height
-        Attribute:
-            height value: must be an integer greater than zero
-        """
-        self.__height = value
-
     @property
     def x(self):
-        """ method for x value
-        Return:
-            x value: integer >= 0
+        """x Getter
+
+        Returns:
+            int: private instance attribute x of rectangle
         """
         return self.__x
 
-    @x.setter
-    def x(self, value):
-        """ method for x value
-        Return:
-            x value: integer >= 0
-        """
-        self.__x = value
-
     @property
     def y(self):
-        """ setter method for y
-        Attribute:
-            y value: must be an integer >= 0
+        """y Getter
+
+        Returns:
+            int: private instance attribute y of rectangle
         """
         return self.__y
 
+    @width.setter
+    def width(self, value):
+        """Set the value in private instance attribute
+
+        Args:
+            value (int): width value
+        """
+        self.__width = value
+
+    @height.setter
+    def height(self, value):
+        """Set the value in private instance attribute
+
+        Args:
+            value (int): height value
+        """
+        self.__height = value
+
+    @x.setter
+    def x(self, value):
+        """Set the value in private instance attribute
+
+        Args:
+            value (int): x value
+        """
+        self.__x = value
+
     @y.setter
     def y(self, value):
-        """ setter method for y
-        Attribute:
-            y value: must be an integer >= 0
+        """Set the value in private instance attribute
+
+        Args:
+            value (int): y value
         """
         self.__y = value
