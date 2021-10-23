@@ -11,10 +11,6 @@ def read_file(filename=""):
     and prints it to stdout.
     """
 
-    if filename == "":
-        return
-    else:
-        with open(file=filename, mode="r", encoding="utf-8") as df:
-            txt = df.read()
-            print(txt)
-        return txt
+    with open(file=filename, mode="r", encoding="utf-8") as df:
+        txt = df.read()
+        print(txt)
