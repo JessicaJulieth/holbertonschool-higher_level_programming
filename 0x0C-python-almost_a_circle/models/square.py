@@ -55,6 +55,7 @@ class Square(Rectangle):
         self.height = size
         self.width = size
 
+
     def update(self, *args, **kwargs):
         """
             Update the value of the Square with arbitrary
@@ -67,3 +68,13 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        dictionary representation of a Square
+
+        Returns:
+            dict: attribute dictionary of Square
+        """
+        new_dict = {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+        return new_dict
