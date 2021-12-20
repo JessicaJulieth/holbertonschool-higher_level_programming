@@ -15,7 +15,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     Query = session.query(State).filter(State.name.like(
-        sys.argv[4])).order_by(State.id)
-    for states in Query:
-        print("{}".format(states.id))
+        sys.argv[4])).order_by(State.id).first()
+    if Query is not None:
+        print("{}".format(Query.id))
+    else:
+        print("Not found")
     session.close()
