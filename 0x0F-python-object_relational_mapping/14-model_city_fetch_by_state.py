@@ -15,6 +15,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session(bind=engine)
     newt = session.query(State, City).join(City).all()
-    for state, city in tables:
+    for state, city in newt:
         print('{}: ({}) {}'.format(state.name, city.id, city.name))
     session.close()
