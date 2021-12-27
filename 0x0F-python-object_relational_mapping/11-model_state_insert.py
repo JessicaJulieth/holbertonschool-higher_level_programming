@@ -20,6 +20,6 @@ if __name__ == "__main__":
     Statet = State(name="Louisiana")
     session.add(Statet)
     session.commit()
-    
+
     print(Statet.id)
     session.close()
