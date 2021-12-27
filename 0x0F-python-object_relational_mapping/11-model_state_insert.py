@@ -5,6 +5,9 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
@@ -14,9 +17,9 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    Query = session.query(State).order_by(State.id).first()
-    session.add(name="Louisiana")
+    Statet = State(name="Louisiana")
+    session.add(Statet)
     session.commit()
     
-    print(Query)
+    print(Statet.id)
     session.close()
