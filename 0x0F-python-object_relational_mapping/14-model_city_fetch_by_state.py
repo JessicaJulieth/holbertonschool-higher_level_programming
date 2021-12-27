@@ -7,7 +7,6 @@ from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from model_state import State, Base
 from model_city import City
-from sqlalchemy import update
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
@@ -16,7 +15,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    newt = session.query(State, City).join(City).all()
-    for state, city in newt:
-        print('{}: ({}) {}'.format(state.name, city.id, city.name))
+    newt = session.query(State, City).filter(City.state_id == State.id).order_by(City.id).all()
+    for cities, state in newt:
+        print('{}: ({}) {}'.format(state.name, cities.id, cities.name))
     session.close()
