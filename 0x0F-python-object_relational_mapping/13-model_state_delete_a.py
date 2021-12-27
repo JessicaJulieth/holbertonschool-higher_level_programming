@@ -5,7 +5,9 @@ import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-from sqlalchemy import update
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
@@ -15,7 +17,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    session.query(State)filter(State.name.like('%a%'))\
+    session.query(State).filter(State.name.like('%a%'))\
         .delete(synchronize_session='fetch')
     session.commit()
     session.close()
