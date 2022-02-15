@@ -4,7 +4,7 @@ const request = require('request');
 const url = process.argv[2];
 const dicc = {};
 
-request(url, function (error, body) {
+request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
